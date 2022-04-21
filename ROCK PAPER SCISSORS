@@ -2,80 +2,84 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
- 
 
 int game(char u, char comp)
 {
-    if (u == comp)
-        return -1;
-    if (u == 's' && comp == 'p')
-        return 0;
- 
-            else if (u == 'p' && comp == 's') return 1;
+	
+	if (u == comp)
+		return -1;
 
-    if (u == 's' && comp == 'z')
-        return 1;
- 
+	
+	if (u == 's' && comp == 'p')
+		return 0;
 
-    else if (u == 'z' && comp == 's')
-        return 0;
- 
-    
-    if (u == 'p' && comp == 'z')
-        return 0;
- 
-   
-    else if (u == 'z' && comp == 'p')
-        return 1;
+		
+			else if (u == 'p' && comp == 's') return 1;
+
+	
+	if (u == 's' && comp == 'z')
+		return 1;
+
+	
+	else if (u == 'z' && comp == 's')
+		return 0;
+
+	
+	if (u == 'p' && comp == 'z')
+		return 0;
+
+	
+	else if (u == 'z' && comp == 'p')
+		return 1;
 }
- 
+
 
 int main()
 {
-    
-    int n;
- 
-    char u, comp, result;
- 
-    
-    srand(time(NULL));
- 
-    
-    n = rand() % 100;
- 
-    
-    if (n < 33)
- 
-        
-        comp = 's';
- 
-    else if (n > 33 && n < 66)
- 
-       
-        comp = 'p';
- 
-   
-    else
-        comp = 'z';
- 
-    printf("\n\n\n\n\t\t\t\tEnter s for STONE, p for PAPER and z for SCISSOR\n\t\t\t\t\t\t\t");
- 
-    
-    scanf("%c", &u);
- 
-    
-    result = game(u, comp);
- 
-    if (result == -1) {
-        printf("\n\n\t\t\t\tGame Draw!\n");
-    }
-    else if (result == 1) {
-        printf("\n\n\t\t\t\tWow! u have won the game!\n");
-    }
-    else {
-        printf("\n\n\t\t\t\tOh! u have lost the game!\n");
-    }
-        printf("\t\t\t\tYou choose : %c and Computer choose : %c\n",u, comp);
- 
-    return 0;
+	
+	int n;
+
+	char u, comp, result;
+
+	
+	srand(time(NULL));
+
+	
+	n = rand() % 100;
+
+	
+	if (n < 33)
+
+		
+		comp = 's';
+
+	else if (n > 33 && n < 66)
+
+		
+		comp = 'p';
+
+	
+	else
+		comp = 'z';
+
+	printf("\n\n\n\n\t\t\t\tEnter s for STONE, p for PAPER and z for SCISSOR\n\t\t\t\t\t\t\t");
+
+	
+	scanf("%c", &u);
+
+	
+	result = game(u, comp);
+
+	if (result == -1) {
+		printf("\n\n\t\t\t\tGame Draw!\n");
+	}
+	else if (result == 1) {
+		printf("\n\n\t\t\t\tWow! You have won the game!\n");
+	}
+	else {
+		printf("\n\n\t\t\t\tOh! You have lost the game!\n");
+	}
+		printf("\t\t\t\You choose : %c and Computer choose : %c\n",u, comp);
+
+	return 0;
 }
